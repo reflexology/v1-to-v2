@@ -7,8 +7,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 
 import errorMiddleware from './middlewares/error';
-import authRouter from './routes/auth';
-import userRouter from './routes/user';
+import migrateRouter from './routes/migrateRouter';
 
 function initMiddlewares(app: express.Application) {
   // Enable Cross Origin Resource Sharing to all origins by default
@@ -29,8 +28,7 @@ function initMiddlewares(app: express.Application) {
 
 function initRoutes(app: express.Application) {
   initMiddlewares(app);
-  app.use('/api/auth', authRouter);
-  app.use('/api/user', userRouter);
+  app.use('/api/migrate', migrateRouter);
   app.use(errorMiddleware);
 }
 

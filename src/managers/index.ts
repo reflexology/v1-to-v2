@@ -1,3 +1,3 @@
-import * as userManager from './userManager';
+import * as migrationManager from './migrationManager';
 
-export { userManager };
+export { migrationManager };
